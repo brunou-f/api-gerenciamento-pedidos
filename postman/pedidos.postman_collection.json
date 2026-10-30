@@ -1,0 +1,67 @@
+{
+  "info": {
+    "name": "API de Gerenciamento de Pedidos",
+    "description": "Execute na ordem, com o servidor recém-iniciado (npm start).",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [{ "key": "baseUrl", "value": "http://localhost:3000" }],
+  "item": [
+    {
+      "name": "01 - Criar pedido válido (201)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{baseUrl}}/pedidos",
+        "body": { "mode": "raw", "raw": "{\n  \"cliente\": \"Carlos Silva\",\n  \"tipo\": \"entrega\",\n  \"valor\": 350,\n  \"prioridade\": \"normal\"\n}" }
+      }
+    },
+    {
+      "name": "02 - Criar pedido inválido (400)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{baseUrl}}/pedidos",
+        "body": { "mode": "raw", "raw": "{\n  \"cliente\": \"   \",\n  \"tipo\": \"aviao\",\n  \"valor\": 0,\n  \"prioridade\": \"normal\"\n}" }
+      }
+    },
+    {
+      "name": "03 - Listar pedidos (200)",
+      "request": { "method": "GET", "url": "{{baseUrl}}/pedidos" }
+    },
+    {
+      "name": "04 - Consultar pedido inexistente (404)",
+      "request": { "method": "GET", "url": "{{baseUrl}}/pedidos/999" }
+    },
+    {
+      "name": "05 - Atualizar status válido (200)",
+      "request": {
+        "method": "PATCH",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{baseUrl}}/pedidos/1/status",
+        "body": { "mode": "raw", "raw": "{\n  \"status\": \"em_preparacao\"\n}" }
+      }
+    },
+    {
+      "name": "Extra - Consultar pedido existente (200)",
+      "request": { "method": "GET", "url": "{{baseUrl}}/pedidos/1" }
+    },
+    {
+      "name": "Extra - Transição não permitida (400)",
+      "request": {
+        "method": "PATCH",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{baseUrl}}/pedidos/1/status",
+        "body": { "mode": "raw", "raw": "{\n  \"status\": \"recebido\"\n}" }
+      }
+    },
+    {
+      "name": "Extra - PATCH em ID inexistente (404)",
+      "request": {
+        "method": "PATCH",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{baseUrl}}/pedidos/999/status",
+        "body": { "mode": "raw", "raw": "{\n  \"status\": \"cancelado\"\n}" }
+      }
+    }
+  ]
+}
