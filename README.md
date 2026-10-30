@@ -3,7 +3,7 @@
 API REST para gerenciar pedidos de uma pequena loja, construída com **Node.js + Express** em **arquitetura em camadas**, com validação de dados, tratamento centralizado de erros e testes automatizados com **Jest**.
 
 > Projeto prático avaliativo — Tópicos Avançados em Sistemas de Informação II.
-> Aluno: _SEU NOME_ — RA: _SEU RA_
+> Aluno: _Bruno Silva de Freitas_ — RA: _43558631_
 
 ---
 
