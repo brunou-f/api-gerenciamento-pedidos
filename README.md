@@ -236,14 +236,12 @@ As capturas estão em `evidencias/`:
 
 ## 8. Uso de IA
 
-> ⚠️ **Preencha esta seção com a sua experiência real.** O texto abaixo é um ponto de partida; o professor pode comparar o que está aqui com o seu domínio do código na atividade individual.
+**Utilizei IA?** Sim — _(Sim, o Claude (Anthropic))_.
 
-**Utilizei IA?** Sim — _(ferramenta: Claude, da Anthropic)_.
+**Para quais tarefas:** _(gerar a estrutura do projeto, os testes e o README; orientar a instalação do Node.js; revisar os prints do Postman.)_
 
-**Para quais tarefas:** _(ex.: gerar a estrutura inicial em camadas, sugerir casos de teste, revisar o README. Descreva o que você realmente pediu.)_
+**Sugestão aceita:** _(separar app.js de server.js, porque permite testar a API com supertest sem abrir uma porta de rede.)_
 
-**Sugestão aceita:** _(ex.: separar `app.js` de `server.js` — aceitei porque permite testar com supertest sem abrir porta.)_
+**Sugestão modificada ou rejeitada (com justificativa):** _(troquei {{baseUrl}} pela URL completa nos prints, porque o enunciado exige a URL legível.)_
 
-**Sugestão modificada ou rejeitada (com justificativa):** _(descreva algo que você de fato alterou, ex.: mudar o código de transição inválida de 400 para 409, ou aceitar `valor` como string numérica, e por quê.)_
-
-**Como validei o código:** _(ex.: rodei `npm test`, testei cada rota no Postman, tentei entradas diferentes das dos exemplos.)_
+**Como validei o código:** _(rodei a API, testei as rotas no Postman e rodei npm test.)_
